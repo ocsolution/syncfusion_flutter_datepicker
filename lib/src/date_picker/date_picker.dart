@@ -5,10 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart' show DateFormat;
-import 'package:syncfusion_flutter_core/core.dart';
-import 'package:syncfusion_flutter_core/core_internal.dart';
-import 'package:syncfusion_flutter_core/localizations.dart';
-import 'package:syncfusion_flutter_core/theme.dart';
+
 import '../../datepicker.dart';
 
 import 'month_view.dart';

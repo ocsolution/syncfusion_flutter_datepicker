@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart' show DateFormat;
-import 'package:syncfusion_flutter_core/core.dart';
-import 'package:syncfusion_flutter_core/localizations.dart';
-import 'package:syncfusion_flutter_core/theme.dart';
 import '../../datepicker.dart';
 import 'picker_helper.dart';
 

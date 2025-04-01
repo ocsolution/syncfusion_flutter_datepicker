@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_core/core.dart';
 import '../../datepicker.dart';
 import 'picker_helper.dart';
 
@@ -333,8 +332,7 @@ class DateRangePickerViewHeaderStyle with Diagnosticable {
     if (other is DateRangePickerViewHeaderStyle) {
       otherStyle = other;
     }
-    return otherStyle.backgroundColor == backgroundColor &&
-        otherStyle.textStyle == textStyle;
+    return otherStyle.backgroundColor == backgroundColor && otherStyle.textStyle == textStyle;
   }
 
   @override
@@ -460,8 +458,7 @@ class DateRangePickerWeekNumberStyle with Diagnosticable {
     if (other is DateRangePickerWeekNumberStyle) {
       otherStyle = other;
     }
-    return otherStyle.textStyle == textStyle &&
-        otherStyle.backgroundColor == backgroundColor;
+    return otherStyle.textStyle == textStyle && otherStyle.backgroundColor == backgroundColor;
   }
 
   @override
@@ -1099,18 +1096,17 @@ class DateRangePickerMonthViewSettings with Diagnosticable {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(IterableDiagnostics<DateTime>(blackoutDates)
-        .toDiagnosticsNode(name: 'blackoutDates'));
-    properties.add(IterableDiagnostics<DateTime>(specialDates)
-        .toDiagnosticsNode(name: 'specialDates'));
+    properties
+        .add(IterableDiagnostics<DateTime>(blackoutDates).toDiagnosticsNode(name: 'blackoutDates'));
+    properties
+        .add(IterableDiagnostics<DateTime>(specialDates).toDiagnosticsNode(name: 'specialDates'));
     properties.add(IntProperty('numberOfWeeksInView', numberOfWeeksInView));
     properties.add(IntProperty('firstDayOfWeek', firstDayOfWeek));
     properties.add(DoubleProperty('viewHeaderHeight', viewHeaderHeight));
     properties.add(StringProperty('dayFormat', dayFormat));
-    properties.add(DiagnosticsProperty<bool>(
-        'showTrailingAndLeadingDates', showTrailingAndLeadingDates));
-    properties.add(DiagnosticsProperty<bool>(
-        'enableSwipeSelection', enableSwipeSelection));
+    properties
+        .add(DiagnosticsProperty<bool>('showTrailingAndLeadingDates', showTrailingAndLeadingDates));
+    properties.add(DiagnosticsProperty<bool>('enableSwipeSelection', enableSwipeSelection));
     properties.add(viewHeaderStyle.toDiagnosticsNode(name: 'viewHeaderStyle'));
     properties.add(IterableProperty<int>('weekendDays', weekendDays));
     properties.add(DiagnosticsProperty<bool>('showWeekNumber', showWeekNumber));
@@ -1657,33 +1653,22 @@ class DateRangePickerYearCellStyle with Diagnosticable {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<TextStyle>('textStyle', textStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('leadingDatesTextStyle', leadingDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'leadingDatesTextStyle', leadingDatesTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'disabledDatesTextStyle', disabledDatesTextStyle));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'disabledDatesDecoration', disabledDatesDecoration));
+        .add(DiagnosticsProperty<TextStyle>('disabledDatesTextStyle', disabledDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'todayCellDecoration', todayCellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'leadingDatesDecoration', leadingDatesDecoration));
+        .add(DiagnosticsProperty<Decoration>('disabledDatesDecoration', disabledDatesDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('todayCellDecoration', todayCellDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('leadingDatesDecoration', leadingDatesDecoration));
   }
 
   @override
   int get hashCode {
-    return Object.hash(
-        textStyle,
-        todayTextStyle,
-        leadingDatesTextStyle,
-        disabledDatesTextStyle,
-        disabledDatesDecoration,
-        cellDecoration,
-        todayCellDecoration,
-        leadingDatesDecoration);
+    return Object.hash(textStyle, todayTextStyle, leadingDatesTextStyle, disabledDatesTextStyle,
+        disabledDatesDecoration, cellDecoration, todayCellDecoration, leadingDatesDecoration);
   }
 }
 
@@ -3089,36 +3074,29 @@ class DateRangePickerMonthCellStyle with Diagnosticable {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<TextStyle>('textStyle', textStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
     properties
-        .add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'trailingDatesTextStyle', trailingDatesTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'leadingDatesTextStyle', leadingDatesTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'blackoutDateTextStyle', blackoutDateTextStyle));
-    properties.add(
-        DiagnosticsProperty<TextStyle>('weekendTextStyle', weekendTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'specialDatesTextStyle', specialDatesTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'disabledDatesTextStyle', disabledDatesTextStyle));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'disabledDatesDecoration', disabledDatesDecoration));
+        .add(DiagnosticsProperty<TextStyle>('trailingDatesTextStyle', trailingDatesTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('leadingDatesTextStyle', leadingDatesTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('blackoutDateTextStyle', blackoutDateTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('weekendTextStyle', weekendTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('specialDatesTextStyle', specialDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'todayCellDecoration', todayCellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'trailingDatesDecoration', trailingDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'leadingDatesDecoration', leadingDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'blackoutDatesDecoration', blackoutDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'weekendDatesDecoration', weekendDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'specialDatesDecoration', specialDatesDecoration));
+        .add(DiagnosticsProperty<TextStyle>('disabledDatesTextStyle', disabledDatesTextStyle));
+    properties
+        .add(DiagnosticsProperty<Decoration>('disabledDatesDecoration', disabledDatesDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('todayCellDecoration', todayCellDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('trailingDatesDecoration', trailingDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('leadingDatesDecoration', leadingDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('blackoutDatesDecoration', blackoutDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('weekendDatesDecoration', weekendDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('specialDatesDecoration', specialDatesDecoration));
   }
 
   @override
@@ -3155,8 +3133,7 @@ class DateRangePickerValueChangeNotifier with Diagnosticable {
   /// Calls the listener every time the controller's property changed.
   ///
   /// Listeners can be removed with [removePropertyChangedListener].
-  void addPropertyChangedListener(
-      DateRangePickerValueChangedCallback listener) {
+  void addPropertyChangedListener(DateRangePickerValueChangedCallback listener) {
     _listeners ??= <DateRangePickerValueChangedCallback>[];
     _listeners?.add(listener);
   }
@@ -3169,8 +3146,7 @@ class DateRangePickerValueChangeNotifier with Diagnosticable {
   /// nothing.
   ///
   /// Listeners can be added with [addPropertyChangedListener].
-  void removePropertyChangedListener(
-      DateRangePickerValueChangedCallback listener) {
+  void removePropertyChangedListener(DateRangePickerValueChangedCallback listener) {
     if (_listeners == null) {
       return;
     }
@@ -3677,8 +3653,7 @@ class DateRangePickerController extends DateRangePickerValueChangeNotifier {
       return;
     }
 
-    _selectedRanges =
-        DateRangePickerHelper.cloneList(ranges)?.cast<PickerDateRange>();
+    _selectedRanges = DateRangePickerHelper.cloneList(ranges)?.cast<PickerDateRange>();
     notifyPropertyChangedListeners('selectedRanges');
   }
 
@@ -3925,10 +3900,9 @@ class DateRangePickerController extends DateRangePickerValueChangeNotifier {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<DateTime>('displayDate', displayDate));
     properties.add(DiagnosticsProperty<DateTime>('selectedDate', selectedDate));
-    properties.add(IterableDiagnostics<DateTime>(selectedDates)
-        .toDiagnosticsNode(name: 'selectedDates'));
-    properties.add(
-        DiagnosticsProperty<PickerDateRange>('selectedRange', selectedRange));
+    properties
+        .add(IterableDiagnostics<DateTime>(selectedDates).toDiagnosticsNode(name: 'selectedDates'));
+    properties.add(DiagnosticsProperty<PickerDateRange>('selectedRange', selectedRange));
     properties.add(IterableDiagnostics<PickerDateRange>(selectedRanges)
         .toDiagnosticsNode(name: 'selectedRanges'));
     properties.add(EnumProperty<DateRangePickerView>('view', view));

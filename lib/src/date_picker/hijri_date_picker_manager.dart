@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_core/core.dart';
+
 import '../../datepicker.dart';
 import 'picker_helper.dart';
 
@@ -490,15 +490,14 @@ class HijriDatePickerMonthViewSettings with Diagnosticable {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(IterableDiagnostics<HijriDateTime>(blackoutDates)
-        .toDiagnosticsNode(name: 'blackoutDates'));
-    properties.add(IterableDiagnostics<HijriDateTime>(specialDates)
-        .toDiagnosticsNode(name: 'specialDates'));
+    properties.add(
+        IterableDiagnostics<HijriDateTime>(blackoutDates).toDiagnosticsNode(name: 'blackoutDates'));
+    properties.add(
+        IterableDiagnostics<HijriDateTime>(specialDates).toDiagnosticsNode(name: 'specialDates'));
     properties.add(IntProperty('firstDayOfWeek', firstDayOfWeek));
     properties.add(DoubleProperty('viewHeaderHeight', viewHeaderHeight));
     properties.add(StringProperty('dayFormat', dayFormat));
-    properties.add(DiagnosticsProperty<bool>(
-        'enableSwipeSelection', enableSwipeSelection));
+    properties.add(DiagnosticsProperty<bool>('enableSwipeSelection', enableSwipeSelection));
     properties.add(viewHeaderStyle.toDiagnosticsNode(name: 'viewHeaderStyle'));
     properties.add(IterableProperty<int>('weekendDays', weekendDays));
     properties.add(DiagnosticsProperty<bool>('showWeekNumber', showWeekNumber));
@@ -919,22 +918,19 @@ class HijriDatePickerYearCellStyle with Diagnosticable {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<TextStyle>('textStyle', textStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
     properties
-        .add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'disabledDatesTextStyle', disabledDatesTextStyle));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'disabledDatesDecoration', disabledDatesDecoration));
+        .add(DiagnosticsProperty<TextStyle>('disabledDatesTextStyle', disabledDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'todayCellDecoration', todayCellDecoration));
+        .add(DiagnosticsProperty<Decoration>('disabledDatesDecoration', disabledDatesDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('todayCellDecoration', todayCellDecoration));
   }
 
   @override
   int get hashCode {
-    return Object.hash(textStyle, todayTextStyle, disabledDatesTextStyle,
-        disabledDatesDecoration, cellDecoration, todayCellDecoration);
+    return Object.hash(textStyle, todayTextStyle, disabledDatesTextStyle, disabledDatesDecoration,
+        cellDecoration, todayCellDecoration);
   }
 }
 
@@ -1762,28 +1758,22 @@ class HijriDatePickerMonthCellStyle with Diagnosticable {
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties.add(DiagnosticsProperty<TextStyle>('textStyle', textStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('blackoutDateTextStyle', blackoutDateTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('weekendTextStyle', weekendTextStyle));
+    properties.add(DiagnosticsProperty<TextStyle>('specialDatesTextStyle', specialDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<TextStyle>('todayTextStyle', todayTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'blackoutDateTextStyle', blackoutDateTextStyle));
-    properties.add(
-        DiagnosticsProperty<TextStyle>('weekendTextStyle', weekendTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'specialDatesTextStyle', specialDatesTextStyle));
-    properties.add(DiagnosticsProperty<TextStyle>(
-        'disabledDatesTextStyle', disabledDatesTextStyle));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'disabledDatesDecoration', disabledDatesDecoration));
+        .add(DiagnosticsProperty<TextStyle>('disabledDatesTextStyle', disabledDatesTextStyle));
     properties
-        .add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'todayCellDecoration', todayCellDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'blackoutDatesDecoration', blackoutDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'weekendDatesDecoration', weekendDatesDecoration));
-    properties.add(DiagnosticsProperty<Decoration>(
-        'specialDatesDecoration', specialDatesDecoration));
+        .add(DiagnosticsProperty<Decoration>('disabledDatesDecoration', disabledDatesDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('cellDecoration', cellDecoration));
+    properties.add(DiagnosticsProperty<Decoration>('todayCellDecoration', todayCellDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('blackoutDatesDecoration', blackoutDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('weekendDatesDecoration', weekendDatesDecoration));
+    properties
+        .add(DiagnosticsProperty<Decoration>('specialDatesDecoration', specialDatesDecoration));
   }
 
   @override
@@ -2102,8 +2092,7 @@ class HijriDatePickerController extends DateRangePickerValueChangeNotifier {
       return;
     }
 
-    _selectedDates =
-        DateRangePickerHelper.cloneList(dates)!.cast<HijriDateTime>();
+    _selectedDates = DateRangePickerHelper.cloneList(dates)!.cast<HijriDateTime>();
     notifyPropertyChangedListeners('selectedDates');
   }
 
@@ -2273,8 +2262,7 @@ class HijriDatePickerController extends DateRangePickerValueChangeNotifier {
       return;
     }
 
-    _selectedRanges =
-        DateRangePickerHelper.cloneList(ranges)!.cast<HijriDateRange>();
+    _selectedRanges = DateRangePickerHelper.cloneList(ranges)!.cast<HijriDateRange>();
     notifyPropertyChangedListeners('selectedRanges');
   }
 
@@ -2521,14 +2509,11 @@ class HijriDatePickerController extends DateRangePickerValueChangeNotifier {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-        .add(DiagnosticsProperty<HijriDateTime>('displayDate', displayDate));
-    properties
-        .add(DiagnosticsProperty<HijriDateTime>('selectedDate', selectedDate));
-    properties.add(IterableDiagnostics<HijriDateTime>(selectedDates)
-        .toDiagnosticsNode(name: 'selectedDates'));
+    properties.add(DiagnosticsProperty<HijriDateTime>('displayDate', displayDate));
+    properties.add(DiagnosticsProperty<HijriDateTime>('selectedDate', selectedDate));
     properties.add(
-        DiagnosticsProperty<HijriDateRange>('selectedRange', selectedRange));
+        IterableDiagnostics<HijriDateTime>(selectedDates).toDiagnosticsNode(name: 'selectedDates'));
+    properties.add(DiagnosticsProperty<HijriDateRange>('selectedRange', selectedRange));
     properties.add(IterableDiagnostics<HijriDateRange>(selectedRanges)
         .toDiagnosticsNode(name: 'selectedRanges'));
     properties.add(EnumProperty<HijriDatePickerView>('view', view));
@@ -2627,8 +2612,7 @@ typedef HijriDateRangePickerCellBuilder = Widget Function(
 ///
 /// [SelectableDayPredicate] parameter used to specify allowable days in the
 /// SfHijriDateRangePicker.
-typedef HijriDatePickerSelectableDayPredicate = bool Function(
-    HijriDateTime date);
+typedef HijriDatePickerSelectableDayPredicate = bool Function(HijriDateTime date);
 
 /// Contains the details that needed on calendar cell builder.
 ///

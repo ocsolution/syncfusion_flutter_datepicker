@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_core/theme.dart';
+
+import '../../datepicker.dart';
 
 /// [SfDateRangePickerThemeDataKey] this class provides material2 and material3
 ///  themeData.

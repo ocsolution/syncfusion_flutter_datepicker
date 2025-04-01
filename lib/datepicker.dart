@@ -15,3 +15,11 @@ library datepicker;
 export 'src/date_picker/date_picker.dart';
 export 'src/date_picker/date_picker_manager.dart';
 export 'src/date_picker/hijri_date_picker_manager.dart';
+
+export 'core/core.dart';
+export 'core/localizations.dart';
+export 'core/theme.dart';
+export 'core/src/theme/color_scheme.dart';
+export 'core/src/theme/daterangepicker_theme.dart';
+export 'core/src/theme/theme_widget.dart';
+export 'core/core_internal.dart';
